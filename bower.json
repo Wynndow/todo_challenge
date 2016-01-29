@@ -1,0 +1,22 @@
+{
+  "name": "todo_challenge",
+  "description": "* Deadline: submit completed pull request by 9am on Monday * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript",
+  "main": "index.js",
+  "authors": [
+    "Chris Wynne <chris.wynndow@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Wynndow/todo_challenge",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-resource": "^1.4.9"
+  }
+}
