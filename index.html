@@ -2,6 +2,7 @@
 <html lang="en" ng-app="ToDoList" >
   <head>
     <title>To Do List</title>
+    <link rel="stylesheet" href="public/css/application.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
@@ -26,11 +27,14 @@
     <section>
       <ul>
         <li ng-repeat="task in toDoCtrl.taskList">
-          <span ng-hide="task.inEdit" ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}}">
-            {{task.text}}
-          </span>
-          <button ng-click="toDoCtrl.toggleDone(task)">Done?</button>
-
+          <section ng-hide="task.inEdit">
+            <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}}">
+              {{task.text}}
+            </span>
+            <button ng-click="toDoCtrl.toggleDone(task)">
+              Done?
+            </button>
+          </section>
           <form ng-show="task.inEdit" ng-submit="toDoCtrl.toggleEdit(task)">
             <input type="text" name="input" ng-model="task.text" required>
             <button class="button" type="submit">Save</button>
