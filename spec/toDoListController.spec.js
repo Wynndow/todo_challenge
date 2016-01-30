@@ -18,7 +18,7 @@ describe('toDoListController', function() {
     it('retains the task', function() {
       ctrl.newTask = "Adding a new task"
       ctrl.addTask();
-      expect(ctrl.taskList[0].task).toEqual("Adding a new task")
+      expect(ctrl.taskList[0].text).toEqual("Adding a new task")
     });
   });
 

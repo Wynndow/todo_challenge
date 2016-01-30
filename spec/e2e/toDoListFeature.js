@@ -9,7 +9,7 @@ describe('To Do List Feature', function() {
     browser.get('http://localhost:8080');
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.className("button")).click();
-    expect(element(by.tagName('li')).getText()).toEqual('Make a to do list.');
+    expect(element(by.tagName('span')).getText()).toEqual('Make a to do list.');
   });
 
   it('clears the search box after adding a task', function() {

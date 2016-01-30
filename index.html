@@ -17,15 +17,21 @@
     </section>
 
     <section>
-      <form>
+      <form ng-submit="toDoCtrl.addTask()">
         <input type="text" name="input" ng-model="toDoCtrl.newTask">
-        <button class="button" ng-click="toDoCtrl.addTask()">Add</button>
+        <button class="button" type="submit">Add</button>
       </form>
     </section>
 
     <section>
       <ul>
-        <li ng-repeat="tasks in toDoCtrl.taskList"> {{tasks.task}} </li>
+        <li ng-repeat="task in toDoCtrl.taskList">
+          <span ng-hide="being_edited" ng-click="being_edited = true">{{task.text}}</span>
+          <form ng-show="being_edited" ng-submit="being_edited = false">
+            <input type="text" name="input" ng-model="task.text">
+            <button class="button" type="submit">Save</button>
+          </form>
+        </li>
       </ul>
     </section>
 
