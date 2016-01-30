@@ -12,7 +12,6 @@ describe('toDoListController', function() {
   });
 
   describe('#addTask', function() {
-
     var itemOne = "Make a to do list"
 
     it('retains the task', function() {
@@ -20,11 +19,9 @@ describe('toDoListController', function() {
       ctrl.addTask();
       expect(ctrl.taskList[0].text).toEqual("Adding a new task")
     });
-
   });
 
   describe('#toggleEdit', function() {
-
     it('changes the state of a tasks inEdit property to true', function() {
       var task = {"text": "Test the inEdit function"}
       ctrl.toggleEdit(task);
@@ -36,11 +33,9 @@ describe('toDoListController', function() {
       ctrl.toggleEdit(task);
       expect(task.inEdit).toBe(false);
     });
-
   });
 
   describe('#toggleDone', function() {
-
     it('changes the state of a tasks done property to true', function() {
       var task = {"text": "Test the toggleDone function"}
       ctrl.toggleDone(task);
@@ -52,26 +47,38 @@ describe('toDoListController', function() {
       ctrl.toggleDone(task);
       expect(task.done).toBe(false);
     });
-
   });
 
   describe('#taskCount', function() {
-
     it('counts the number of tasks not completed', function() {
       ctrl.taskList = [{"done": false}, {"done": false}, {"done": true}];
       expect(ctrl.taskCount()).toEqual(2)
     });
-
   });
 
   describe('#removeCompleted', function() {
-
     it('removes completed tasks', function() {
       ctrl.taskList = [{"done": true}, {"done": true}, {"done": false}]
       ctrl.removeCompleted();
       expect(ctrl.taskList).toEqual([{"done": false}])
     });
+  });
 
+  describe('#plural', function() {
+    it('returns \'\' if taskCount is 1', function() {
+      ctrl.taskList = [{"done": false}]
+      expect(ctrl.plural()).toEqual('')
+    });
+
+    it('returns \'s\' if taskCount is 0', function() {
+      ctrl.taskList = []
+      expect(ctrl.plural()).toEqual('s')
+    });
+
+    it('returns \'s\' if taskCount is 2', function() {
+      ctrl.taskList = [{"done": false}, {"done": false}]
+      expect(ctrl.plural()).toEqual('s')
+    });
   });
 
 });

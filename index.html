@@ -14,7 +14,7 @@
   <body ng-controller="ToDoListController as toDoCtrl">
 
     <section>
-      <p class="numberOfThings">{{toDoCtrl.taskCount()}} things to do...</p>
+      <p class="numberOfThings">{{toDoCtrl.taskCount()}} thing{{toDoCtrl.plural()}} to do...</p>
     </section>
 
     <section>

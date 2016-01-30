@@ -29,4 +29,8 @@ toDoList.controller('ToDoListController', [function() {
     });
   };
 
+  self.plural = function() {
+    return self.taskCount() === 1 ? '' : 's'
+  }
+
 }]);

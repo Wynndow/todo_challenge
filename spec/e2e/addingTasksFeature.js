@@ -24,4 +24,15 @@ describe('Adding tasks', function() {
     element(by.className("button")).click();
     expect(element(by.className('taskItem')).isPresent()).toBe(false);
   });
+
+  it('correctly plurlizes the number of tasks', function() {
+    expect(element(by.className('numberOfThings')).getText()).toEqual('0 things to do...');
+    element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
+    element(by.className("button")).click();
+    expect(element(by.className('numberOfThings')).getText()).toEqual('1 thing to do...');
+    element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
+    element(by.className("button")).click();
+    expect(element(by.className('numberOfThings')).getText()).toEqual('2 things to do...');
+
+  });
 });
