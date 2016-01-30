@@ -1,4 +1,4 @@
-describe('To Do List Feature', function() {
+describe('Adding tasks', function() {
 
   it('has a title', function() {
     browser.get('http://localhost:8080');
@@ -17,5 +17,11 @@ describe('To Do List Feature', function() {
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.className("button")).click();
     expect(element(by.model("toDoCtrl.newTask")).getAttribute('value')).toEqual('')
+  });
+
+  it('won\'t allow an empty task to be submitted', function() {
+    browser.get('http://localhost:8080');
+    element(by.className("button")).click();
+    expect(element(by.tagName('span')).isPresent()).toBe(false);
   });
 });

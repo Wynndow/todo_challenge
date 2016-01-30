@@ -18,7 +18,7 @@
 
     <section>
       <form ng-submit="toDoCtrl.addTask()">
-        <input type="text" name="input" ng-model="toDoCtrl.newTask">
+        <input type="text" name="input" ng-model="toDoCtrl.newTask" required>
         <button class="button" type="submit">Add</button>
       </form>
     </section>
@@ -28,7 +28,7 @@
         <li ng-repeat="task in toDoCtrl.taskList">
           <span ng-hide="being_edited" ng-click="being_edited = true">{{task.text}}</span>
           <form ng-show="being_edited" ng-submit="being_edited = false">
-            <input type="text" name="input" ng-model="task.text">
+            <input type="text" name="input" ng-model="task.text" required>
             <button class="button" type="submit">Save</button>
           </form>
         </li>
