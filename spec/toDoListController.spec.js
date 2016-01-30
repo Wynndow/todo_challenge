@@ -55,4 +55,13 @@ describe('toDoListController', function() {
 
   });
 
+  describe('#taskCount', function() {
+
+    it('counts the number of tasks not completed', function() {
+      ctrl.taskList = [{"done": false}, {"done": false}, {"done": true}];
+      expect(ctrl.taskCount()).toEqual(2)
+    });
+
+  });
+
 });

@@ -4,7 +4,7 @@ toDoList.controller('ToDoListController', [function() {
   self.taskList = [];
 
   self.addTask = function() {
-    self.taskList.push({"text": self.newTask});
+    self.taskList.push({"text": self.newTask, "done": false});
     self.newTask = '';
   };
 
@@ -14,6 +14,14 @@ toDoList.controller('ToDoListController', [function() {
 
   self.toggleDone = function(task) {
     task.done = !task.done;
+
+  };
+
+  self.taskCount = function() {
+    var arrayToCount = self.taskList.filter(function(obj) {
+      return obj.done === false
+    });
+    return arrayToCount.length;
   };
 
 }]);
