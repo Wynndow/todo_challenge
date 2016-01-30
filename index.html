@@ -26,8 +26,11 @@
     <section>
       <ul>
         <li ng-repeat="task in toDoCtrl.taskList">
-          <span ng-hide="being_edited" ng-click="being_edited = true">{{task.text}}</span>
-          <form ng-show="being_edited" ng-submit="being_edited = false">
+          <span ng-hide="task.inEdit" ng-click="toDoCtrl.toggleEdit(task)">
+            {{task.text}}
+          </span>
+
+          <form ng-show="task.inEdit" ng-submit="toDoCtrl.toggleEdit(task)">
             <input type="text" name="input" ng-model="task.text" required>
             <button class="button" type="submit">Save</button>
           </form>
