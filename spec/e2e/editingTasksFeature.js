@@ -4,10 +4,10 @@ describe('Editing a task', function() {
     browser.get('http://localhost:8080');
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.buttonText("Add")).click();
-    element(by.tagName('span')).click();
+    element(by.className('taskItem')).click();
     element(by.model("task.text")).sendKeys(' And profit');
     element(by.buttonText('Save')).click();
-    expect(element(by.tagName('span')).getText()).toEqual('Make a to do list. And profit');
+    expect(element(by.className('taskItem')).getText()).toEqual('Make a to do list. And profit');
   });
 
   it('hides the edit form before the task is clicked', function() {
@@ -21,8 +21,8 @@ describe('Editing a task', function() {
     browser.get('http://localhost:8080');
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.buttonText("Add")).click();
-    element(by.tagName('span')).click();
-    expect(element(by.tagName('span')).isDisplayed()).toBe(false);
+    element(by.className('taskItem')).click();
+    expect(element(by.className('taskItem')).isDisplayed()).toBe(false);
   });
 
 });
