@@ -11,4 +11,11 @@ describe('To Do List Feature', function() {
     element(by.className("button")).click();
     expect(element(by.tagName('li')).getText()).toEqual('Make a to do list.');
   });
+
+  it('clears the search box after adding a task', function() {
+    browser.get('http://localhost:8080');
+    element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
+    element(by.className("button")).click();
+    expect(element(by.model("toDoCtrl.newTask")).getAttribute('value')).toEqual('')
+  });
 });

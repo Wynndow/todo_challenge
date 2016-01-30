@@ -18,11 +18,11 @@
 
     <section>
       <form>
-        <input type="text" ng-model="toDoCtrl.newTask">
+        <input type="text" name="input" ng-model="toDoCtrl.newTask">
         <button class="button" ng-click="toDoCtrl.addTask()">Add</button>
       </form>
     </section>
-    
+
     <section>
       <ul>
         <li ng-repeat="tasks in toDoCtrl.taskList"> {{tasks.task}} </li>
