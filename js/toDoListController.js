@@ -14,7 +14,6 @@ toDoList.controller('ToDoListController', [function() {
 
   self.toggleDone = function(task) {
     task.done = !task.done;
-
   };
 
   self.taskCount = function() {
@@ -22,6 +21,12 @@ toDoList.controller('ToDoListController', [function() {
       return obj.done === false
     });
     return arrayToCount.length;
+  };
+
+  self.removeCompleted = function() {
+    self.taskList = self.taskList.filter(function(obj) {
+      return obj.done === false
+    });
   };
 
 }]);

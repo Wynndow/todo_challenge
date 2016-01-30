@@ -64,4 +64,14 @@ describe('toDoListController', function() {
 
   });
 
+  describe('#removeCompleted', function() {
+
+    it('removes completed tasks', function() {
+      ctrl.taskList = [{"done": true}, {"done": true}, {"done": false}]
+      ctrl.removeCompleted();
+      expect(ctrl.taskList).toEqual([{"done": false}])
+    });
+
+  });
+
 });
