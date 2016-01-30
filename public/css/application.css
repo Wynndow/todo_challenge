@@ -1,3 +1,111 @@
+body {
+  background-color: #003f87;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+}
+
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+
 .completed-true {
   text-decoration: line-through;
+}
+
+.title {
+  height: 100px;
+  width: 100%;
+  background-color: #003f87;
+  text-align: center;
+}
+
+.title > p {
+  font-family: 'Chewy', cursive;
+  font-size: 25px;
+  margin: 0px;
+}
+
+.title > p > span {
+  font-size:75px;
+}
+
+.form {
+  height: 100px;
+  width: 100%;
+  background-color: #1ca0de;
+}
+
+.newTask {
+  height: 60px;
+  width: 60%;
+  float: left;
+  padding: 20px;
+  font-size: 2em;
+  font-family: 'Chewy', cursive;
+  border: 0;
+}
+
+.addButton {
+  height: 100px;
+  width: 36.8%;
+  padding: 0;
+  border: 0;
+  font-size: 3em;
+  font-family: 'Chewy', cursive;
+  background-color: #075aaa;
+}
+
+.filters {
+  height: 100px;
+  width: 100%;
+  background-color: #1ca0de;
+  text-align: center;
+  font-family: 'Chewy', cursive;
+  font-size: 25px;
+  margin: 0px;
+  line-height: 100px;
+}
+.filters > span:hover {
+  color: #d5641c;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background-color: #81ceff;
+  text-align: center;
+  list-style-type: none;
+}
+
+li > section > span {
+  height: 60px;
+  width: 60%;
+  float: left;
+  padding: 0px;
+  font-size: 2em;
+  font-family: 'Chewy', cursive;
+  border: 0;
+}
+
+.taskItem {
+  height: 100px;
+}
+
+.footer{
+  /*margin-top: -15px;*/
+}
+
+.clearButton {
+  height: 100px;
+  width: 100%;
+  background-color: #1ca0de;
+  text-align: center;
+  font-family: 'Chewy', cursive;
+  font-size: 25px;
+  margin: 0px;
+  line-height: 100px;
+  border: 0;
 }

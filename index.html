@@ -3,6 +3,7 @@
   <head>
     <title>To Do List</title>
     <link rel="stylesheet" href="public/css/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
@@ -12,47 +13,47 @@
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
+    <section id="wrapper">
+      <section class="title">
+        <p class="numberOfThings"><span>{{toDoCtrl.taskCount()}}</span> thing{{toDoCtrl.plural()}} to do...</p>
+      </section>
 
-    <section>
-      <p class="numberOfThings">{{toDoCtrl.taskCount()}} thing{{toDoCtrl.plural()}} to do...</p>
-    </section>
+      <section class="form">
+        <form ng-submit="toDoCtrl.addTask()">
+          <input class="newTask" type="text" name="input" ng-model="toDoCtrl.newTask" placeholder="What do I need to do..."required>
+          <button class="addButton" type="submit">Add</button>
+        </form>
+      </section>
 
-    <section>
-      <form ng-submit="toDoCtrl.addTask()">
-        <input type="text" name="input" ng-model="toDoCtrl.newTask" required>
-        <button class="button" type="submit">Add</button>
-      </form>
-    </section>
+      <section class="filters">
+        <span ng-click="state = nil" id="allFilter">All</span> |
+        <span ng-click="state = {done: false}" id="activeFilter">Active</span> |
+        <span ng-click="state = {done: true}" id="completedFilter">Completed</span>
+      </section>
 
-    <section>
-      <span ng-click="state = nil" id="allFilter">All</span> |
-      <span ng-click="state = {done: false}" id="activeFilter">Active</span> |
-      <span ng-click="state = {done: true}" id="completedFilter">Completed</span>
-    </section>
+      <section>
+        <ul>
+          <li class="taskItem" ng-repeat="task in toDoCtrl.taskList | filter:state" >
+            <section ng-hide="task.inEdit">
+              <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}} taskItem">
+                {{task.text}}
+              </span>
+              <button ng-click="toDoCtrl.toggleDone(task)">
+                Done?
+              </button>
+            </section>
+            <form ng-show="task.inEdit" ng-submit="toDoCtrl.toggleEdit(task)">
+              <input type="text" name="input" ng-model="task.text" required>
+              <button class="button" type="submit">Save</button>
+            </form>
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <ul>
-        <li ng-repeat="task in toDoCtrl.taskList | filter:state" >
-          <section ng-hide="task.inEdit">
-            <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}} taskItem">
-              {{task.text}}
-            </span>
-            <button ng-click="toDoCtrl.toggleDone(task)">
-              Done?
-            </button>
-          </section>
-          <form ng-show="task.inEdit" ng-submit="toDoCtrl.toggleEdit(task)">
-            <input type="text" name="input" ng-model="task.text" required>
-            <button class="button" type="submit">Save</button>
-          </form>
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <button ng-click="toDoCtrl.removeCompleted()">Clear completed</button>
-    </section>
-
+      <section class="footer">
+        <button class="clearButton" ng-click="toDoCtrl.removeCompleted()">Clear completed</button>
+      </section>
+  </section>
   </body>
 
 </html>
