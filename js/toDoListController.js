@@ -12,4 +12,8 @@ toDoList.controller('ToDoListController', [function() {
     task.inEdit = !task.inEdit;
   };
 
+  self.toggleDone = function(task) {
+    task.done = !task.done;
+  };
+
 }]);

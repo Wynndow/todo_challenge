@@ -11,7 +11,7 @@ describe('toDoListController', function() {
     expect(ctrl.taskList.length).toEqual(0);
   });
 
-  describe('when adding a task', function() {
+  describe('#addTask', function() {
 
     var itemOne = "Make a to do list"
 
@@ -23,7 +23,7 @@ describe('toDoListController', function() {
 
   });
 
-  describe('when editing a task', function() {
+  describe('#toggleEdit', function() {
 
     it('changes the state of a tasks inEdit property to true', function() {
       var task = {"text": "Test the inEdit function"}
@@ -32,9 +32,25 @@ describe('toDoListController', function() {
     });
 
     it('changes the state of a tasks inEdit property to false', function() {
-      var task = {"text": "Test the inEdit function", "inEdit": true}
+      var task = {"text": "Test the toggleEdit function", "inEdit": true}
       ctrl.toggleEdit(task);
       expect(task.inEdit).toBe(false);
+    });
+
+  });
+
+  describe('#toggleDone', function() {
+
+    it('changes the state of a tasks done property to true', function() {
+      var task = {"text": "Test the toggleDone function"}
+      ctrl.toggleDone(task);
+      expect(task.done).toBe(true);
+    });
+
+    it('changes the state of a tasks done property to false', function() {
+      var task = {"text": "Test the toggleDone function", "done": true}
+      ctrl.toggleDone(task);
+      expect(task.done).toBe(false);
     });
 
   });
