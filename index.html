@@ -25,8 +25,16 @@
     </section>
 
     <section>
+      <div ng-click="state = {done: false}" id="activeFilter">Active</div> |
+      <div ng-click="state = {done: true}" id="completedFilter">Completed</div> |
+      <div ng-click="state = nil" id="allFilter">All</div>
+    </section>
+
+    <section>
+
       <ul>
-        <li ng-repeat="task in toDoCtrl.taskList">
+
+        <li ng-repeat="task in toDoCtrl.taskList | filter:state" >
           <section ng-hide="task.inEdit">
             <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}}">
               {{task.text}}
