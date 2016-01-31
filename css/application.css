@@ -13,6 +13,25 @@ body {
 
 .completed-true {
   text-decoration: line-through;
+  height: 60px;
+  width: 60%;
+  float: left;
+  padding: 20px;
+  font-size: 2em;
+  font-family: 'Chewy', cursive;
+  border: 0;
+  line-height: 60px
+}
+
+.completed-false {
+  height: 60px;
+  width: 60%;
+  float: left;
+  padding: 20px;
+  font-size: 2em;
+  font-family: 'Chewy', cursive;
+  border: 0;
+  line-height: 60px
 }
 
 .title {
@@ -48,7 +67,7 @@ body {
   border: 0;
 }
 
-.addButton {
+.bigButton {
   height: 100px;
   width: 36.8%;
   padding: 0;
@@ -56,6 +75,10 @@ body {
   font-size: 3em;
   font-family: 'Chewy', cursive;
   background-color: #075aaa;
+}
+
+.bigButton:hover {
+  color: #d5641c;
 }
 
 .filters {
@@ -67,6 +90,8 @@ body {
   font-size: 25px;
   margin: 0px;
   line-height: 100px;
+  border-bottom: black dashed 1px;
+
 }
 .filters > span:hover {
   color: #d5641c;
@@ -75,27 +100,16 @@ body {
 ul {
   margin: 0;
   padding: 0;
-  background-color: #81ceff;
+  /*background-color: #81ceff;*/
   text-align: left;
   list-style-type: none;
 }
 
-li > section > span {
-  height: 60px;
-  width: 60%;
-  float: left;
-  padding-left: 1em;
-  font-size: 2em;
-  font-family: 'Chewy', cursive;
-  border: 0;
-}
-
 .taskItem {
   height: 100px;
-}
+  border-bottom: black dashed 1px;
+  border-top: black dashed 1px;
 
-.footer{
-  /*margin-top: -15px;*/
 }
 
 .clearButton {
@@ -108,4 +122,9 @@ li > section > span {
   margin: 0px;
   line-height: 100px;
   border: 0;
+  border-top: black dashed 1px;
+}
+
+.clearButton:hover {
+  color: #d5641c;
 }

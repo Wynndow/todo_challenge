@@ -21,7 +21,7 @@
       <section class="form">
         <form ng-submit="toDoCtrl.addTask()">
           <input class="newTask" type="text" name="input" ng-model="toDoCtrl.newTask" placeholder="What do I need to do..."required>
-          <button class="addButton" type="submit">Add</button>
+          <button class="bigButton" type="submit">Add</button>
         </form>
       </section>
 
@@ -31,20 +31,20 @@
         <span ng-click="state = {done: true}" id="completedFilter">Completed</span>
       </section>
 
-      <section class="list">
+      <section>
         <ul>
           <li class="taskItem" ng-repeat="task in toDoCtrl.taskList | filter:state" >
             <section ng-hide="task.inEdit">
               <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}}">
-                <span class="taskText">{{task.text}}</span>
+                {{task.text}}
               </span>
-              <button ng-click="toDoCtrl.toggleDone(task)">
+              <button class="bigButton" ng-click="toDoCtrl.toggleDone(task)">
                 Done?
               </button>
             </section>
             <form ng-show="task.inEdit" ng-submit="toDoCtrl.toggleEdit(task)">
-              <input type="text" name="input" ng-model="task.text" required>
-              <button class="button" type="submit">Save</button>
+              <input class="newTask" type="text" name="input" ng-model="task.text" required>
+              <button class="bigButton" type="submit">Save</button>
             </form>
           </li>
         </ul>
