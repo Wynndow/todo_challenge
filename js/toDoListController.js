@@ -2,7 +2,7 @@ toDoList.controller('ToDoListController', [function() {
 
   var self = this;
   self.taskList = [];
-// {"text":"Make purdy", "done": false}
+
   self.addTask = function() {
     self.taskList.push({"text": self.newTask, "done": false});
     self.newTask = '';
