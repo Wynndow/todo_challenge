@@ -3,7 +3,7 @@ describe('Filtering tasks', function() {
   beforeEach(function() {
     browser.get('http://localhost:8080');
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
-    element(by.className("button")).click();
+    element(by.buttonText("Add")).click();
     element(by.buttonText('Done?')).click();
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.buttonText("Add")).click();

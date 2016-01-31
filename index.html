@@ -35,8 +35,8 @@
         <ul>
           <li class="taskItem" ng-repeat="task in toDoCtrl.taskList | filter:state" >
             <section ng-hide="task.inEdit">
-              <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}} taskItem">
-                {{task.text}}
+              <span ng-click="toDoCtrl.toggleEdit(task)" class="completed-{{task.done}}">
+                <span class="taskText">{{task.text}}</span>
               </span>
               <button ng-click="toDoCtrl.toggleDone(task)">
                 Done?

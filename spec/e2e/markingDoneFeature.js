@@ -8,12 +8,13 @@ describe('Marking a task as done', function() {
   });
 
   it('crosses out the task when the done button is clicked', function() {
-    expect(element(by.className('taskItem')).getAttribute('class')).toMatch('completed-true')
+    expect(element(by.className('completed-true')).isPresent()).toBe(true)
   });
 
   it('uncrosses out the task when the done button is clicked again', function() {
     element(by.buttonText("Done?")).click();
-    expect(element(by.className('taskItem')).getAttribute('class')).toMatch('completed-false')
+    expect(element(by.className('completed-true')).isPresent()).toBe(false)
+    expect(element(by.className('completed-false')).isPresent()).toBe(true)
   });
 
 });
