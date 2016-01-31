@@ -31,7 +31,7 @@
         <span ng-click="state = {done: true}" id="completedFilter">Completed</span>
       </section>
 
-      <section>
+      <section class="list">
         <ul>
           <li class="taskItem" ng-repeat="task in toDoCtrl.taskList | filter:state" >
             <section ng-hide="task.inEdit">
