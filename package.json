@@ -32,6 +32,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^1.9.8",
+    "phantomjs-prebuilt": "1.9.8",
     "protractor": "^3.0.0"
   }
 }
