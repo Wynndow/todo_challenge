@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "karma start spec/karma.conf.js",
+    "test": "karma start spec/karma.conf.js --browsers PhantomJS --single-run",
     "start": "http-server"
   },
   "repository": {
