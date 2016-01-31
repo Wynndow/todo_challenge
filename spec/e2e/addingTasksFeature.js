@@ -11,7 +11,7 @@ describe('Adding tasks', function() {
   it('allows you to add tasks via a form and view them', function() {
     element(by.model("toDoCtrl.newTask")).sendKeys('Make a to do list.');
     element(by.buttonText("Add")).click();
-    expect(element(by.className('taskText')).getText()).toEqual('Make a to do list.');
+    expect(element(by.className('completed-false')).getText()).toEqual('Make a to do list.');
   });
 
   it('clears the search box after adding a task', function() {
