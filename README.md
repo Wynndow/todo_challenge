@@ -7,7 +7,7 @@ This is my solution to the Makers Academy Week 8 weekend challenge, which was to
 
 It's entirely test driven, using Karma/Jasmine and Protractor. My initial step was to sketch the bones of the app out in HTML to get a feel for it, then implement feature tests using Protractor, and then using Karma/Jasmine to test the internals.
 
-It looks like the below screenshot.
+It looks like the below screenshot and is hosted on [Heroku](https://todolistwynne.herokuapp.com/) if you'd like to have a play.
 
 ![Screenshot](http://i.imgur.com/kCcRsmj.png)
 
@@ -67,11 +67,11 @@ So I never see them again
 
 #Further improvements
 
-There are a number of features I would like to implement in future.
+There are a couple of features I would like to implement in future.
 
 0. Create some persistant storage with MongoDB.
 0. Automate the testing process, possible with Grunt.
-0. Host the app online.
+
 
 #Original README
 
