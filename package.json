@@ -1,39 +1,17 @@
 {
   "name": "todo_challenge",
-  "version": "1.0.0",
-  "description": "* Deadline: submit completed pull request by 9am on Monday * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "karma start spec/karma.conf.js --browsers PhantomJS --single-run",
-    "start": "http-server",
-    "postinstall": "bower install"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wynndow/todo_challenge.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Wynndow/todo_challenge/issues"
-  },
-  "homepage": "https://github.com/Wynndow/todo_challenge#readme",
   "dependencies": {
-    "bower": "^1.7.7",
-    "express": "^4.13.4",
-    "http-server": "^0.8.5"
-  },
-  "devDependencies": {
-    "jasmine-core": "^2.4.1",
-    "jasmine-reporters": "^2.1.1",
-    "karma": "^0.13.19",
-    "karma-chrome-launcher": "^0.2.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "phantomjs-prebuilt": "^2.1.3",
-    "protractor": "^3.0.0"
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   }
 }

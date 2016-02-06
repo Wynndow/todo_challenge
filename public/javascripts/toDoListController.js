@@ -4,7 +4,11 @@ toDoList.controller('ToDoListController', [function() {
   self.taskList = [];
 
   self.addTask = function() {
-    self.taskList.push({"text": self.newTask, "done": false});
+    var task = new Task({"text": self.newTask, "done": false});
+    task.save(function(err) {
+      if (err) throw err;
+      console.log('Task saved successfully!')
+    });
     self.newTask = '';
   };
 
