@@ -9,7 +9,7 @@
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="javascripts/app.js"></script>
     <script src="javascripts/toDoListController.js"></script>
-
+    <script src="javascripts/factories/getTodos.js"></script>
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
@@ -20,7 +20,7 @@
 
       <section class="form">
         <form ng-submit="toDoCtrl.addTask()">
-          <input class="newTask" type="text" name="input" ng-model="toDoCtrl.newTask" placeholder="What do I need to do..."required>
+          <input class="newTask" type="text" name="input" ng-model="toDoCtrl.newTask.text" placeholder="What do I need to do..."required>
           <button class="bigButton" type="submit">Add</button>
         </form>
       </section>

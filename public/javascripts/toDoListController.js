@@ -1,11 +1,23 @@
-toDoList.controller('ToDoListController', [function() {
+'use strict'
+
+toDoList.controller('ToDoListController', ['$http', 'getTodos', function($http, getTodos) {
 
   var self = this;
+  self.newTask = {};
   self.taskList = [];
 
+  getTodos.fetchTasks()
+    .then(function(responce) {
+      self.taskList = responce.data
+    })
+
+
   self.addTask = function() {
-    self.taskList.push({"text": self.newTask, "done": false});
-    self.newTask = '';
+    getTodos.addTask(self.newTask)
+      .then(function(responce) {
+        self.newTask = {}
+        self.taskList = responce.data
+      })
   };
 
   self.toggleEdit = function(task) {
@@ -24,9 +36,10 @@ toDoList.controller('ToDoListController', [function() {
   };
 
   self.removeCompleted = function() {
-    self.taskList = self.taskList.filter(function(obj) {
-      return obj.done === false
-    });
+    getTodos.removeCompleted(self.taskList)
+      .then(function(responce) {
+        self.taskList = responce.data
+      });
   };
 
   self.plural = function() {

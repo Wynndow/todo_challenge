@@ -89,5 +89,5 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : { "toDoList": true, "angular": true, "browser": true, "element": true, "expect": true, "by": true, "exports": true, "module": true, "inject": true, "toDoList": true, "angular": true }        // additional predefined global variables
+    "globals"       : { "toDoList": true, "angular": true, "browser": true, "element": true, "expect": true, "by": true, "exports": true, "module": true, "inject": true, "toDoList": true, "angular": true, "require": true }        // additional predefined global variables
 }
