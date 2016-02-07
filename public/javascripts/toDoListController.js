@@ -29,10 +29,7 @@ toDoList.controller('ToDoListController', ['$http', 'getTodos', function($http, 
   };
 
   self.taskCount = function() {
-    var arrayToCount = self.taskList.filter(function(obj) {
-      return obj.done === false
-    });
-    return arrayToCount.length;
+    return getTodos.taskCount(self.taskList)
   };
 
   self.removeCompleted = function() {

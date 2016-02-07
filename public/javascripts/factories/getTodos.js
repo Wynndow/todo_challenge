@@ -16,6 +16,12 @@ toDoList.factory('getTodos', function($http) {
         $http.delete('/api/todos/' + task._id)
       }
       return $http.get('/api/todos');
+    },
+    taskCount: function(taskList) {
+      var arrayToCount = taskList.filter(function(obj) {
+        return obj.done === false
+      });
+      return arrayToCount.length;
     }
   }
 });
